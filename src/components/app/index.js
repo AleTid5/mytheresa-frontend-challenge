@@ -1,6 +1,4 @@
-import React from "react";
-
-function App() {
+export default function App() {
   return (
     <div>
       <h2 className="tomato">React + Webpack 5</h2>
@@ -8,5 +6,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

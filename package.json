@@ -1,5 +1,6 @@
 {
   "name": "mytheresa-frontend-challenge",
+  "homepage": "https://aletid5.github.io/mytheresa-frontend-challenge",
   "version": "1.0.0",
   "description": "Frontend challenge for MyTheresa",
   "main": "index.js",
@@ -22,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/AleTid5/mytheresa-frontend-challenge/issues"
   },
-  "homepage": "https://github.com/AleTid5/mytheresa-frontend-challenge#readme",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
