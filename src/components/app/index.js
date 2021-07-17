@@ -1,11 +1,11 @@
-import CoverCarousel from "../carousel/cover-carousel";
+import Pages from "pages";
+import HeaderNavbar from "../header-navbar";
 
 export default function App() {
   return (
-    <div>
-      <CoverCarousel />
-      <CoverCarousel />
-      <CoverCarousel />
-    </div>
+    <>
+      <HeaderNavbar />
+      <Pages />
+    </>
   );
 }

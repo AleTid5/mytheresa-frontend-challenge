@@ -4,12 +4,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: path.join(__dirname, "dist"),
     filename: "index.bundle.js",
+    clean: true,
   },
   devServer: {
     port: 3000,
     watchContentBase: true,
+    historyApiFallback: true, // This is line is required to correctly use React Router
   },
   // Rules of how webpack will take our files, compile & bundle them for the browser
   module: {
@@ -38,6 +40,7 @@ module.exports = {
     alias: {
       assets: path.resolve(__dirname, "src/assets"),
       components: path.resolve(__dirname, "src/components"),
+      pages: path.resolve(__dirname, "src/pages"),
     },
   },
 };
