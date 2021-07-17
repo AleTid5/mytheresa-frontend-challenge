@@ -1,5 +1,11 @@
+import { StrictMode } from "react";
 import ReactDom from "react-dom";
-import "./assets/scss/index.scss";
-import App from "./components/app";
+import "assets/styles/index";
+import App from "components/app";
 
-ReactDom.render(<App />, document.getElementById("app"));
+ReactDom.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("app")
+);
