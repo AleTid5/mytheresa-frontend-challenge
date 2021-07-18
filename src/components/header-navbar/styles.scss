@@ -5,8 +5,7 @@
     background-color: $main-app-color;
 
     nav {
-        @extend .space-between, .items-center;
-        width: 100%;
+        @extend .app-container, .space-between, .items-center;
 
         img {
             max-width: $margin-navbar * 2;

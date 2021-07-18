@@ -6,10 +6,8 @@ SwiperCore.use([EffectCoverflow, Pagination]);
 export default function CoverCarousel() {
   return (
     <Swiper
-      effect={"coverflow"}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={"auto"}
+      effect="coverflow"
+      slidesPerView="auto"
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -17,8 +15,10 @@ export default function CoverCarousel() {
         modifier: 1,
         slideShadows: true,
       }}
-      pagination={true}
-      className="mySwiper"
+      pagination
+      loop
+      grabCursor
+      centeredSlides
     >
       <SwiperSlide>
         <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
