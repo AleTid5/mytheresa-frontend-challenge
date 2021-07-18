@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   output: {
@@ -41,12 +42,15 @@ module.exports = {
       favicon: "./public/favicon.ico",
     }),
     new MiniCssExtractPlugin(),
+    new Dotenv(),
   ],
   resolve: {
     alias: {
       assets: path.resolve(__dirname, "src/assets"),
       components: path.resolve(__dirname, "src/components"),
       pages: path.resolve(__dirname, "src/pages"),
+      config: path.resolve(__dirname, "src/config"),
+      "custom-hooks": path.resolve(__dirname, "src/custom-hooks"),
     },
   },
 };

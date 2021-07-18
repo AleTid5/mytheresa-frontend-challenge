@@ -24,6 +24,9 @@
     "url": "https://github.com/AleTid5/mytheresa-frontend-challenge/issues"
   },
   "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "axios": "^0.21.1",
+    "dotenv-webpack": "^7.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
@@ -31,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",

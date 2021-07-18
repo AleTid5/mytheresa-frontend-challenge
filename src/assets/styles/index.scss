@@ -1,8 +1,7 @@
 @import "./variables";
 @import "./mixins";
-@import "../../components/carousel/styles";
-@import "../../components/container/styles";
-@import "../../components/header-navbar/styles";
+@import "../../components/styles";
+@import "../../pages/styles";
 
 body {
   margin: 0;

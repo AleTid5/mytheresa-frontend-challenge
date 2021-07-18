@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
-export default function CoverCarousel() {
-  return (
+export default function CoverCarousel({ images = [] }) {
+  return images.length > 0 ? (
     <Swiper
       effect="coverflow"
       slidesPerView="auto"
@@ -20,33 +20,11 @@ export default function CoverCarousel() {
       grabCursor
       centeredSlides
     >
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-      </SwiperSlide>
+      {images.map((image) => (
+        <SwiperSlide key={image}>
+          <img src={image} alt="" />
+        </SwiperSlide>
+      ))}
     </Swiper>
-  );
+  ) : null;
 }
