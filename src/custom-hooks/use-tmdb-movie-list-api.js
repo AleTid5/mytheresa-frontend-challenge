@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TMDBApiConnector from "config/tmdb-api-connector.config";
 
-export default function useTMDBApi(genreId) {
+export default function useTmdbMovieListApi(genreId) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -18,7 +18,7 @@ export default function useTMDBApi(genreId) {
         setMovies(results);
       } catch (e) {
         setError(
-          "There was an internal error 😔 We are working to fix it! Please, try again."
+          "There was an when trying to get the movie list 😔 We are working to fix it! Please, try again."
         );
       } finally {
         setIsLoading(false);

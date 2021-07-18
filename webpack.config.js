@@ -5,8 +5,9 @@ const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "/dist"),
     filename: "index.bundle.js",
+    publicPath: "/",
     clean: true,
   },
   devServer: {
@@ -40,6 +41,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
+      inject: "body",
     }),
     new MiniCssExtractPlugin(),
     new Dotenv(),
@@ -47,10 +49,10 @@ module.exports = {
   resolve: {
     alias: {
       assets: path.resolve(__dirname, "src/assets"),
-      components: path.resolve(__dirname, "src/components"),
-      pages: path.resolve(__dirname, "src/pages"),
       config: path.resolve(__dirname, "src/config"),
+      components: path.resolve(__dirname, "src/components"),
       "custom-hooks": path.resolve(__dirname, "src/custom-hooks"),
+      pages: path.resolve(__dirname, "src/pages"),
     },
   },
 };

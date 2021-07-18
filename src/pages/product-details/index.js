@@ -1,18 +1,14 @@
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function ProductDetails() {
-  let history = useHistory();
+  const { movieId } = useParams();
 
-  function handleClick() {
-    history.push("/");
-  }
+  console.log(movieId);
 
   return (
     <div>
       <div>Product details</div>
-      <div>
-        <button onClick={handleClick}>Go home</button>
-      </div>
+      <div></div>
     </div>
   );
 }

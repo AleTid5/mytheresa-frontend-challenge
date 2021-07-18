@@ -1,16 +1,18 @@
-import CartIcon from "assets/icons/CartIcon";
+import HeartIcon from "assets/icons/HeartIcon";
 import Logo from "assets/images/logo.png";
-import Container from "../container";
+import { Link } from "react-router-dom";
 
-export default function HeaderNavbar() {
-  const items = 0;
+export default function Navbar() {
+  const items = 1;
 
   return (
     <header className="header-navbar header-navbar-background">
       <nav>
-        <img src={Logo} alt="Mytheresa Logo" />
+        <Link to="/">
+          <img src={Logo} alt="Mytheresa Logo" />
+        </Link>
         <div className="icon">
-          <CartIcon />
+          <HeartIcon />
           {items > 0 && (
             <div className="icon-badge">
               <div>{items}</div>

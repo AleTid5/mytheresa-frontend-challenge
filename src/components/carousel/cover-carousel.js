@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
-export default function CoverCarousel({ images = [] }) {
-  return images.length > 0 ? (
+export default function CoverCarousel({ moviesPosters = [] }) {
+  return moviesPosters.length > 0 ? (
     <Swiper
       effect="coverflow"
       slidesPerView="auto"
@@ -20,10 +20,8 @@ export default function CoverCarousel({ images = [] }) {
       grabCursor
       centeredSlides
     >
-      {images.map((image) => (
-        <SwiperSlide key={image}>
-          <img src={image} alt="" />
-        </SwiperSlide>
+      {moviesPosters.map((moviesPoster, key) => (
+        <SwiperSlide key={key}>{moviesPoster}</SwiperSlide>
       ))}
     </Swiper>
   ) : null;
