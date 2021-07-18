@@ -1,20 +1,21 @@
-import { useHistory } from "react-router-dom";
-import CoverCarousel from "../../components/carousel/cover-carousel";
+import CoverCarousel from "components/carousel/cover-carousel";
+import Container from "components/container";
 
 export default function Main() {
-  const history = useHistory();
-
-  function handleClick() {
-    console.log(123);
-    history.push("/product-details");
-  }
-
   return (
-    <div>
-      <button onClick={() => handleClick()}>Go products</button>
+    <>
+      <Container>
+        <h1>Men</h1>
+      </Container>
       <CoverCarousel />
+      <Container>
+        <h1>Women</h1>
+      </Container>
       <CoverCarousel />
+      <Container>
+        <h1>Kids</h1>
+      </Container>
       <CoverCarousel />
-    </div>
+    </>
   );
 }

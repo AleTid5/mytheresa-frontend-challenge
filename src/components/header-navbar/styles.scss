@@ -1,0 +1,44 @@
+.header-navbar {
+    @extend .middle-align;
+    width: 100%;
+    height: $margin-navbar;
+    background-color: $main-app-color;
+
+    nav {
+        @extend .space-between, .items-center;
+        width: 100%;
+
+        img {
+            max-width: $margin-navbar * 2;
+
+            @include media(lg) {
+                max-width: $margin-navbar * 2 + 30px;
+            }
+        }
+
+        .icon {
+            position: relative;
+
+            svg {
+                height: $margin-navbar / 2 - 5px;
+                width: $margin-navbar / 2 - 5px;
+            }
+
+            &-badge {
+                @extend .middle-align;
+                background-color: tomato;
+                color: white;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                min-height: 22px;
+                min-width: 22px;
+                border-radius: 50%;
+
+                div {
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,28 @@
 @import "./variables";
 @import "./mixins";
-@import "../../components/app/styles";
 @import "../../components/carousel/styles";
+@import "../../components/container/styles";
+@import "../../components/header-navbar/styles";
+
+body {
+  margin: 0;
+}
+
+.items-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-align {
+  @extend .items-center, .justify-center;
+}

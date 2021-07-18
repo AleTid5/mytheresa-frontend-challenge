@@ -1,11 +1,13 @@
 import { StrictMode } from "react";
 import ReactDom from "react-dom";
 import "assets/styles/index";
-import App from "components/app";
+import Pages from "pages";
+import HeaderNavbar from "components/header-navbar";
 
 ReactDom.render(
   <StrictMode>
-    <App />
+    <HeaderNavbar />
+    <Pages />
   </StrictMode>,
   document.getElementById("app")
 );
