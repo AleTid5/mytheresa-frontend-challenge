@@ -1,0 +1,45 @@
+.movie-details {
+  padding: 2rem 0;
+
+  .banner {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    animation: gradient 15s ease-in-out infinite;
+    font-size: 4rem;
+    letter-spacing: .8rem;
+
+    &.comedy {
+      font-family: "Comedy", serif;
+      background: linear-gradient(-45deg, #52eea5, #d384e3, #e9db5e, #4662b7);
+      background-size: 400% 400%;
+      font-size: 5rem;
+      letter-spacing: 1.5rem;
+      padding-top: 2px;
+    }
+
+    &.science-fiction {
+      font-family: "Science-Fiction", fantasy;
+      background: linear-gradient(-45deg, #b252ee, #6a3ce7, #23a6d5, #d523a3);
+      background-size: 400% 400%;
+    }
+
+    &.western {
+      font-family: "Western", monospace;
+      background: linear-gradient(-45deg, #e4743c, #ec965d, #ac4c1d, #8e5f47);
+      background-size: 400% 400%;
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

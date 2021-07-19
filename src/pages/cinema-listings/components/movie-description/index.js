@@ -1,8 +1,10 @@
 import { useHistory } from "react-router-dom";
 import StarIcon from "assets/icons/StarIcon";
+import Image from "components/image";
 
 export default function MovieDescription({
   movieId,
+  genreId,
   title,
   imagePath,
   voteAverage,
@@ -10,7 +12,7 @@ export default function MovieDescription({
   const history = useHistory();
 
   function onSelectMovie() {
-    history.push(`/product-details/${movieId}`);
+    history.push(`/movie-details/${genreId}/${movieId}`);
   }
 
   return (
@@ -25,7 +27,7 @@ export default function MovieDescription({
           </div>
         </div>
       </div>
-      <img src={process.env.TMDB_IMAGE_URL + imagePath} alt={title} />
+      <Image src={imagePath} alt={title} />
     </article>
   );
 }

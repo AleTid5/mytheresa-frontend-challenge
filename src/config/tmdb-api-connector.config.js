@@ -6,6 +6,12 @@ export const GENRES = {
   WESTERN: 37,
 };
 
+export const getGenreName = (genreId) =>
+  Object.entries(GENRES)
+    .find(([, id]) => id === parseInt(genreId))[0]
+    ?.toLowerCase()
+    ?.replaceAll("_", "-");
+
 export default axios.create({
   baseURL: process.env.TMDB_API_URL,
   headers: {

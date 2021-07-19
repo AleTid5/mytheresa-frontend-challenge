@@ -3,6 +3,27 @@
 @import "../../components/styles";
 @import "../../pages/styles";
 
+@font-face {
+  font-family: 'Comedy';
+  src: url('../fonts/comedy.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Science-Fiction';
+  src: url('../fonts/science-fiction.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Western';
+  src: url('../fonts/western.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   background-color: $main-bg-color;

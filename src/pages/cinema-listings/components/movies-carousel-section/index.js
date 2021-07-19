@@ -10,6 +10,7 @@ export default function ScienceFictionSection({ children, genreId }) {
     ({ id, original_title, poster_path, vote_average }) => (
       <MovieDescription
         key={id}
+        genreId={genreId}
         movieId={id}
         title={original_title}
         imagePath={poster_path}

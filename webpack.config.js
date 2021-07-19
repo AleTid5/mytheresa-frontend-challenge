@@ -35,13 +35,16 @@ module.exports = {
           loader: "url-loader",
         },
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
-      inject: "body",
     }),
     new MiniCssExtractPlugin(),
     new Dotenv(),
