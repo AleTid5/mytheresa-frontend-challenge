@@ -1,9 +1,10 @@
 import HeartIcon from "assets/icons/HeartIcon";
 import Logo from "assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { useFavoriteMoviesContext } from "contexts/favorite-movies.context";
 
 export default function Navbar() {
-  const items = 1;
+  const { favoriteMovies } = useFavoriteMoviesContext();
 
   return (
     <header className="header-navbar header-navbar-background">
@@ -13,9 +14,9 @@ export default function Navbar() {
         </Link>
         <div className="icon">
           <HeartIcon />
-          {items > 0 && (
+          {favoriteMovies.length > 0 && (
             <div className="icon-badge">
-              <div>{items}</div>
+              <div>{favoriteMovies.length}</div>
             </div>
           )}
         </div>

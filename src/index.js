@@ -4,12 +4,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "assets/styles/index";
 import Pages from "pages";
 import Navbar from "components/navbar";
+import { FavoriteMoviesProvider } from "contexts/favorite-movies.context";
 
 ReactDom.render(
   <StrictMode>
     <Router>
-      <Navbar />
-      <Pages />
+      <FavoriteMoviesProvider>
+        <Navbar />
+        <Pages />
+      </FavoriteMoviesProvider>
     </Router>
   </StrictMode>,
   document.getElementById("app")

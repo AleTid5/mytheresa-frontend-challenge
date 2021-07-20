@@ -1,17 +1,33 @@
 import { useParams } from "react-router-dom";
 import StarIcon from "assets/icons/StarIcon";
 import HalfStarIcon from "assets/icons/HalfStarIcon";
+import HeartIcon from "assets/icons/HeartIcon";
 import FullHeartIcon from "assets/icons/FullHeartIcon";
-import { getGenreName } from "config/tmdb-api-connector.config";
 import Card from "components/card";
 import Container from "components/container";
 import Image from "components/image";
+import { getGenreName } from "config/tmdb-api-connector.config";
+import { useFavoriteMoviesContext } from "contexts/favorite-movies.context";
 import useTmdbMovieDetailsApi from "hooks/use-tmdb-movie-details-api";
+import { useEffect, useState } from "react";
 
 export default function MovieDetails() {
+  const {
+    favoriteMovies,
+    addToFavorites,
+    removeFromFavorites,
+    isMovieInTheList,
+  } = useFavoriteMoviesContext();
   const { movieId, genreId } = useParams();
   const [movie, isLoading] = useTmdbMovieDetailsApi(movieId);
+  const [isMovieStarred, setIsMovieStarred] = useState(
+    isMovieInTheList(movieId)
+  );
   const genreName = getGenreName(genreId);
+
+  useEffect(() => {
+    setIsMovieStarred(isMovieInTheList(movieId));
+  }, [favoriteMovies]);
 
   return (
     <div className={`movie-details ${genreName}`}>
@@ -32,9 +48,18 @@ export default function MovieDetails() {
             </div>
             <div className="title">{movie.title}</div>
             <div className="overview">“ {movie.overview} ”</div>
-            <button className="button-add-to-favorites">
-              <FullHeartIcon />
-              <span>Add to favorites</span>
+            <button
+              className="button-add-to-favorites"
+              onClick={() =>
+                isMovieStarred
+                  ? removeFromFavorites(movieId)
+                  : addToFavorites(movie)
+              }
+            >
+              {isMovieStarred ? <FullHeartIcon /> : <HeartIcon color="red" />}
+              <span>
+                {isMovieStarred ? "Remove from favorites" : "Add to favorites"}
+              </span>
             </button>
           </div>
         </Card>
