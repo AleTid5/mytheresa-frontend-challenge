@@ -1,7 +1,3 @@
-/*
-
- */
-
 export default function StarIcon({ className }) {
   return (
     <svg
