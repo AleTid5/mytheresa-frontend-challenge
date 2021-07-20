@@ -1,6 +1,6 @@
 import CoverCarousel from "components/carousel/cover-carousel";
 import Container from "components/container";
-import useTmdbMovieListApi from "custom-hooks/use-tmdb-movie-list-api";
+import useTmdbMovieListApi from "hooks/use-tmdb-movie-list-api";
 import MovieDescription from "../movie-description";
 
 export default function ScienceFictionSection({ children, genreId }) {

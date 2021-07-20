@@ -6,7 +6,7 @@ import { getGenreName } from "config/tmdb-api-connector.config";
 import Card from "components/card";
 import Container from "components/container";
 import Image from "components/image";
-import useTmdbMovieDetailsApi from "custom-hooks/use-tmdb-movie-details-api";
+import useTmdbMovieDetailsApi from "hooks/use-tmdb-movie-details-api";
 
 export default function MovieDetails() {
   const { movieId, genreId } = useParams();
@@ -23,7 +23,11 @@ export default function MovieDetails() {
           <Image src={movie.poster_path} />
           <div className="description">
             <div className="stars" title={`Rate: ${movie.vote_average}`}>
-              {Array(parseInt(movie.vote_average ?? 0)).fill(<StarIcon />)}
+              {Array(parseInt(movie.vote_average ?? 0))
+                .fill(null)
+                .map((_v, k) => (
+                  <StarIcon key={k} />
+                ))}
               {movie.vote_average % 2 !== 0 && <HalfStarIcon />}
             </div>
             <div className="title">{movie.title}</div>

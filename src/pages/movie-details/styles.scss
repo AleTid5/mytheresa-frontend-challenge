@@ -25,6 +25,7 @@
     animation: gradient 15s ease-in-out infinite;
     font-size: 4rem;
     letter-spacing: .8rem;
+    margin-top: 1rem;
 
     &.comedy {
       font-family: var(--title-font-family);
@@ -58,7 +59,7 @@
   }
 
   &-main-card {
-    margin-top: 2rem;
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 2rem;

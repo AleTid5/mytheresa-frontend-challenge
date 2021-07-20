@@ -15,7 +15,7 @@ module.exports = {
     watchContentBase: true,
     historyApiFallback: true, // This is line is required to correctly use React Router
   },
-  // Rules of how webpack will take our files, compile & bundle them for the browser
+  // Rules of how webpack will take the files, compile and bundle them for the browser
   module: {
     rules: [
       {
@@ -54,7 +54,7 @@ module.exports = {
       assets: path.resolve(__dirname, "src/assets"),
       config: path.resolve(__dirname, "src/config"),
       components: path.resolve(__dirname, "src/components"),
-      "custom-hooks": path.resolve(__dirname, "src/custom-hooks"),
+      hooks: path.resolve(__dirname, "src/hooks"),
       pages: path.resolve(__dirname, "src/pages"),
     },
   },
