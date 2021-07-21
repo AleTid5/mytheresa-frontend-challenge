@@ -12,14 +12,14 @@ export default function Navbar() {
         <Link to="/" className="items-center">
           <img src={Logo} alt="Mytheresa Logo" />
         </Link>
-        <div className="icon items-center">
+        <Link to="/favorite-movies" className="icon items-center">
           <HeartIcon />
           {favoriteMovies.length > 0 && (
             <div className="icon-badge">
               <div>{favoriteMovies.length}</div>
             </div>
           )}
-        </div>
+        </Link>
       </nav>
     </header>
   );

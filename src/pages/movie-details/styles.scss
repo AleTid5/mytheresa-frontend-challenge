@@ -1,8 +1,6 @@
 @import "components/movie-card/styles";
 
 .movie-details {
-  $button-background: $main-bg-color;
-  $title-font-family: inherit;
   padding: 2rem 0;
 
   &.comedy {
