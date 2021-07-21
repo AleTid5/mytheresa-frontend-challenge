@@ -1,0 +1,62 @@
+.movie-card {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include media(sm) {
+    grid-template-columns: max-content 1fr;
+  }
+
+  img {
+    border-radius: 10px;
+    margin: auto;
+
+    @include media(sm) {
+      margin: unset;
+    }
+  }
+
+  .description {
+    color: white;
+
+    .stars {
+      color: $main-app-color;
+    }
+
+    .title {
+      font-family: var(--title-font-family);
+      font-size: 2rem;
+
+      @include media(sm) {
+        font-size: 3rem;
+      }
+    }
+
+    .overview {
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    .button-add-to-favorites {
+      @extend .middle-align;
+      background: var(--button-background);
+      cursor: pointer;
+      text-transform: uppercase;
+      padding: .5rem 1rem;
+      font-weight: 700;
+      border-radius: .375rem;
+      border: 1px solid transparent;
+      margin-top: 1rem;
+
+      span {
+        font-size: .8rem;
+        margin-left: 4px;
+      }
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}

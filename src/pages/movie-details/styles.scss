@@ -1,3 +1,5 @@
+@import "components/movie-card/styles";
+
 .movie-details {
   $button-background: $main-bg-color;
   $title-font-family: inherit;
@@ -23,9 +25,13 @@
     text-align: center;
     color: white;
     animation: gradient 15s ease-in-out infinite;
-    font-size: 4rem;
+    font-size: 2rem;
     letter-spacing: .8rem;
     margin-top: 1rem;
+
+    @include media(sm) {
+      font-size: 4rem;
+    }
 
     &.comedy {
       font-family: var(--title-font-family);
@@ -54,56 +60,6 @@
       }
       100% {
         background-position: 0% 50%;
-      }
-    }
-  }
-
-  &-main-card {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 2rem;
-
-    img {
-      border-radius: 10px;
-    }
-
-    .description {
-      color: white;
-
-      .stars {
-        color: $main-app-color;
-      }
-
-      .title {
-        font-family: var(--title-font-family);
-        font-size: 3rem;
-      }
-
-      .overview {
-        font-size: 1.3rem;
-        font-style: italic;
-      }
-
-      .button-add-to-favorites {
-        @extend .middle-align;
-        background: var(--button-background);
-        cursor: pointer;
-        text-transform: uppercase;
-        padding: .5rem 1rem;
-        font-weight: 700;
-        border-radius: .375rem;
-        border: 1px solid transparent;
-        margin-top: 1rem;
-
-        span {
-          font-size: .8rem;
-          margin-left: 4px;
-        }
-
-        &:hover {
-          filter: brightness(0.9);
-        }
       }
     }
   }
