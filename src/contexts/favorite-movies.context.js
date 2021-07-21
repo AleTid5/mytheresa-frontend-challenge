@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import useLocalStorage from "hooks/use-local-storage";
 
 const FavoriteMoviesContext = createContext({
   favoriteMovies: [],
@@ -10,7 +11,8 @@ const FavoriteMoviesContext = createContext({
 const { Provider } = FavoriteMoviesContext;
 
 export const FavoriteMoviesProvider = ({ children }) => {
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [items, setItems] = useLocalStorage("favorite-movies", []);
+  const [favoriteMovies, setFavoriteMovies] = useState(items);
 
   const isMovieInTheList = (movieId) =>
     favoriteMovies.some(
@@ -20,15 +22,19 @@ export const FavoriteMoviesProvider = ({ children }) => {
   const addToFavorites = (movie) => {
     if (isMovieInTheList(movie.id)) return;
 
-    setFavoriteMovies([...favoriteMovies, movie]);
+    const movies = [...favoriteMovies, movie];
+    setFavoriteMovies(movies);
+    setItems(movies);
   };
 
-  const removeFromFavorites = (movieId) =>
-    setFavoriteMovies(
-      favoriteMovies.filter(
-        (favoriteMovie) => favoriteMovie.id !== parseInt(movieId)
-      )
+  const removeFromFavorites = (movieId) => {
+    const movies = favoriteMovies.filter(
+      (favoriteMovie) => favoriteMovie.id !== parseInt(movieId)
     );
+
+    setFavoriteMovies(movies);
+    setItems(movies);
+  };
 
   return (
     <Provider
