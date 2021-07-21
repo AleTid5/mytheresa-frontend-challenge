@@ -1,8 +1,10 @@
+import { Suspense, lazy } from "react";
 import { useParams } from "react-router-dom";
 import Card from "components/card";
 import Container from "components/container";
 import { getGenreName } from "config/tmdb-api-connector.config";
-import MovieCard from "./components/movie-card";
+import MovieCardSkeleton from "./components/movie-card/skeleton";
+const MovieCard = lazy(() => import("./components/movie-card"));
 
 export default function MovieDetails() {
   const { genreId } = useParams();
@@ -14,7 +16,9 @@ export default function MovieDetails() {
         <Card className={`banner ${genreName}`}>
           {genreName?.replaceAll("-", " ")}
         </Card>
-        <MovieCard />
+        <Suspense fallback={<MovieCardSkeleton />}>
+          <MovieCard />
+        </Suspense>
       </Container>
     </div>
   );

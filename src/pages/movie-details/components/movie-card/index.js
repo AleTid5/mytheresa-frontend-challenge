@@ -17,7 +17,7 @@ export default function MovieCard() {
     isMovieInTheList,
   } = useFavoriteMoviesContext();
   const { movieId } = useParams();
-  const [movie, isLoading] = useTmdbMovieDetailsApi(movieId);
+  const [movie] = useTmdbMovieDetailsApi(movieId);
   const [isMovieStarred, setIsMovieStarred] = useState(
     isMovieInTheList(movieId)
   );

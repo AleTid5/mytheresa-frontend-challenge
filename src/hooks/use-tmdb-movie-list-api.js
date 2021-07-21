@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import TMDBApiConnector from "config/tmdb-api-connector.config";
 
 export default function useTmdbMovieListApi(genreId) {
@@ -6,7 +6,7 @@ export default function useTmdbMovieListApi(genreId) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     (async () => {
       try {
         setIsLoading(true);
