@@ -42,7 +42,9 @@ export default function MovieCard() {
         <div className="title">{movie.title}</div>
         <div className="overview">“ {movie.overview} ”</div>
         <button
-          className="button-add-to-favorites"
+          className={`button-add-to-favorites ${
+            isMovieStarred ? "clicked" : ""
+          }`}
           onClick={() =>
             isMovieStarred
               ? removeFromFavorites(movieId)

@@ -9,10 +9,10 @@ export default function Navbar() {
   return (
     <header className="header-navbar header-navbar-background">
       <nav>
-        <Link to="/">
+        <Link to="/" className="items-center">
           <img src={Logo} alt="Mytheresa Logo" />
         </Link>
-        <div className="icon">
+        <div className="icon items-center">
           <HeartIcon />
           {favoriteMovies.length > 0 && (
             <div className="icon-badge">
