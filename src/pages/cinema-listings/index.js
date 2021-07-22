@@ -1,5 +1,5 @@
-import { GENRES } from "~config/tmdb-api-connector.config";
-import SECTIONS from "~constants/section.constant";
+import { GENRES } from "@config/tmdb-api-connector.config";
+import SECTIONS from "@constants/section.constant";
 import MoviesCarouselSection from "./components/movies-carousel-section";
 
 export default function CinemaListings() {

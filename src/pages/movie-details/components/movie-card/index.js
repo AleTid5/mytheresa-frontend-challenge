@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import StarIcon from "~assets/icons/StarIcon";
-import HalfStarIcon from "~assets/icons/HalfStarIcon";
-import HeartIcon from "~assets/icons/HeartIcon";
-import FullHeartIcon from "~assets/icons/FullHeartIcon";
-import Card from "~components/card";
-import Image from "~components/image";
-import { useFavoriteMoviesContext } from "~contexts/favorite-movies.context";
-import useTmdbMovieDetailsApi from "~hooks/use-tmdb-movie-details-api";
+import StarIcon from "@assets/icons/StarIcon";
+import HalfStarIcon from "@assets/icons/HalfStarIcon";
+import HeartIcon from "@assets/icons/HeartIcon";
+import FullHeartIcon from "@assets/icons/FullHeartIcon";
+import Card from "@components/card";
+import Image from "@components/image";
+import { useFavoriteMoviesContext } from "@contexts/favorite-movies.context";
+import useTmdbMovieDetailsApi from "@hooks/use-tmdb-movie-details-api";
 
 export default function MovieCard() {
   const {

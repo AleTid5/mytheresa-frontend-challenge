@@ -1,10 +1,10 @@
 import { lazy, Suspense } from "react";
-import CoverCarouselSkeleton from "~components/carousel/cover-carousel-skeleton";
-import Container from "~components/container";
-import useTmdbMovieListApi from "~hooks/use-tmdb-movie-list-api";
+import CoverCarouselSkeleton from "@components/carousel/cover-carousel-skeleton";
+import Container from "@components/container";
+import useTmdbMovieListApi from "@hooks/use-tmdb-movie-list-api";
 import MovieDescription from "../movie-description";
 
-const CoverCarousel = lazy(() => import("~components/carousel/cover-carousel"));
+const CoverCarousel = lazy(() => import("@components/carousel/cover-carousel"));
 
 export default function ScienceFictionSection({ children, genreId }) {
   const [movies, isLoading] = useTmdbMovieListApi(genreId);

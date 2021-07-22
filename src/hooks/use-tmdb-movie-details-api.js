@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import TMDBApiConnector from "~config/tmdb-api-connector.config";
+import TMDBApiConnector from "@config/tmdb-api-connector.config";
 
 export default function useTmdbMovieDetailsApi(movieId) {
   const [movies, setMovies] = useState([]);
