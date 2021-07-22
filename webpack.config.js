@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 
-module.exports = {
+module.exports = (env) => ({
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "[name].[contenthash].js",
-    publicPath: "/",
+    publicPath: env.WEBPACK_SERVE ? "/" : "/mytheresa-frontend-challenge/",
     clean: true,
   },
   devServer: {
@@ -60,4 +60,4 @@ module.exports = {
       "~pages": path.resolve(__dirname, "src/pages"),
     },
   },
-};
+});
