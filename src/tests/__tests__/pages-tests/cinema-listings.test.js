@@ -12,6 +12,10 @@ describe("Cinema Listings Tests", () => {
     location.href = "http://localhost";
   });
 
+  afterAll(() => {
+    jest.spyOn(useTmdbMovieListApi, "default").mockReturnValue([[], null]);
+  });
+
   test("should correctly render the sections by genre", () => {
     const { getByText } = renderApp();
 

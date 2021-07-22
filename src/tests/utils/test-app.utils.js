@@ -4,16 +4,15 @@ import { FavoriteMoviesProvider } from "@contexts/favorite-movies.context";
 import Navbar from "../../components/navbar";
 import Pages from "../../pages";
 
-const AllTheProviders = (
-  <Router>
-    <FavoriteMoviesProvider>
-      <Navbar />
-      <Pages />
-    </FavoriteMoviesProvider>
-  </Router>
+export const App = (
+  <FavoriteMoviesProvider>
+    <Navbar />
+    <Pages />
+  </FavoriteMoviesProvider>
 );
 
-const customRender = (options) => render(AllTheProviders, options);
+const customRender = (component = <Router>{App}</Router>, options) =>
+  render(component, options);
 
 // re-export everything
 export * from "@testing-library/react";

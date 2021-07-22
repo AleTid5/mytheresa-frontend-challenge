@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import TMDBApiConnector from "@config/tmdb-api-connector.config";
 
 export default function useTmdbMovieDetailsApi(movieId) {
-  const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState([]);
   const [error, setError] = useState(null);
 
   useLayoutEffect(() => {
@@ -10,7 +10,7 @@ export default function useTmdbMovieDetailsApi(movieId) {
       try {
         const { data } = await TMDBApiConnector.get(`/movie/${movieId}`);
 
-        setMovies(data);
+        setMovie(data);
       } catch (e) {
         setError(
           "There was an error when trying to get the movie description 😔 We are working to fix it! Please, try again in a few minutes."
@@ -19,5 +19,5 @@ export default function useTmdbMovieDetailsApi(movieId) {
     })();
   }, [movieId]);
 
-  return [movies, error];
+  return [movie, error];
 }

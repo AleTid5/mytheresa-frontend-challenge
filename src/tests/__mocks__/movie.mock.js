@@ -74,7 +74,7 @@ export const movieMock = {
   vote_count: 338,
 };
 
-const getMovieMock = (id) => ({ ...movieMock, id });
+export const getMovieMock = (id) => ({ ...movieMock, id });
 
 export const getRandomMovies = (movies = 1) =>
   Array(movies)
