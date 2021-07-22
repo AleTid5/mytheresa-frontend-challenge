@@ -61,4 +61,19 @@
       }
     }
   }
+
+  .button-go-back {
+    display: inline-flex;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--button-background);
+    padding: .5rem 1rem;
+    border-radius: .375rem;
+    margin-top: 2rem;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, serif;
+    font-weight: 700;
+    font-size: .65rem;
+  }
 }

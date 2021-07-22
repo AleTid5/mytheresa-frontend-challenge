@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Card from "~components/card";
 import Container from "~components/container";
 import { getGenreName } from "~config/tmdb-api-connector.config";
@@ -17,6 +17,9 @@ export default function MovieDetails() {
         <Card className={`banner ${genreName}`}>
           {genreName?.replaceAll("-", " ")}
         </Card>
+        <Link to="/" className="button-go-back">
+          Go back
+        </Link>
         <Suspense fallback={<MovieCardSkeleton />}>
           <MovieCard />
         </Suspense>
