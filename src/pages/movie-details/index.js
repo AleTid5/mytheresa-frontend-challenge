@@ -1,9 +1,10 @@
-import { Suspense, lazy } from "react";
+import { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import Card from "~components/card";
 import Container from "~components/container";
 import { getGenreName } from "~config/tmdb-api-connector.config";
 import MovieCardSkeleton from "./components/movie-card/movie-card-skeleton";
+
 const MovieCard = lazy(() => import("./components/movie-card"));
 
 export default function MovieDetails() {
