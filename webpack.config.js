@@ -6,7 +6,7 @@ const Dotenv = require("dotenv-webpack");
 module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "index.bundle.js",
+    filename: "[name].[contenthash].js",
     publicPath: "/",
     clean: true,
   },
