@@ -32,8 +32,19 @@ To run the unit tests, you have to run the following command:
 $ npm run test
 ```
 
+In addition, if you have `npx` installed locally, you can run
+
+```sh
+$ npx jest --watch # To hot reload the tests
+$ npx jest --coverage # To generate the "coverage" folder and see how much percentage of the application has been tested (accessing the index.html file)
+```
+
 ### 🔥 Features!
-- Here will be listed the features
+- Movies carousel is on fire!
+- You can add or remove a movie from your movie favorite list
+- For each movie gender there is a different banner
+- Assets are cached
+- Every dynamic component has a `Skeleton` and is rendered using `lazy` and `Suspense`
 
 ### 👻 Licence
 [WTFPL](http://www.wtfpl.net/about/)
