@@ -1,20 +1,6 @@
 import { GENRES } from "config/tmdb-api-connector.config";
+import SECTIONS from "constants/section.constant";
 import MoviesCarouselSection from "./components/movies-carousel-section";
-
-const SECTIONS = [
-  {
-    title: "Science Fiction",
-    genre: "SCIENCE_FICTION",
-  },
-  {
-    title: "Comedy",
-    genre: "COMEDY",
-  },
-  {
-    title: "Western",
-    genre: "WESTERN",
-  },
-];
 
 export default function CinemaListings() {
   return SECTIONS.map(({ title, genre }) => (

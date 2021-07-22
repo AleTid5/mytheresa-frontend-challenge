@@ -1,7 +1,9 @@
-import CoverCarousel from "components/carousel/cover-carousel";
+import { Suspense, lazy } from "react";
+import CoverCarouselSkeleton from "components/carousel/cover-carousel-skeleton";
 import Container from "components/container";
 import useTmdbMovieListApi from "hooks/use-tmdb-movie-list-api";
 import MovieDescription from "../movie-description";
+const CoverCarousel = lazy(() => import("components/carousel/cover-carousel"));
 
 export default function ScienceFictionSection({ children, genreId }) {
   const [movies, isLoading] = useTmdbMovieListApi(genreId);
@@ -22,7 +24,9 @@ export default function ScienceFictionSection({ children, genreId }) {
   return (
     <section className="movies-carousel-section">
       <Container>{children}</Container>
-      {!isLoading && <CoverCarousel moviesPosters={moviesPosters} />}
+      <Suspense fallback={<CoverCarouselSkeleton />}>
+        <CoverCarousel moviesPosters={moviesPosters} />
+      </Suspense>
     </section>
   );
 }
