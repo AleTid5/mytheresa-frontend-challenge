@@ -7,7 +7,7 @@ import MovieDescription from "../movie-description";
 const CoverCarousel = lazy(() => import("@components/carousel/cover-carousel"));
 
 export default function ScienceFictionSection({ children, genreId }) {
-  const [movies, isLoading] = useTmdbMovieListApi(genreId);
+  const [movies] = useTmdbMovieListApi(genreId);
 
   const moviesPosters = movies.map(
     ({ id, original_title, poster_path, vote_average }) => (

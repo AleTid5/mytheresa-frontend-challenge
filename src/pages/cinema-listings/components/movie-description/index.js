@@ -16,7 +16,11 @@ export default function MovieDescription({
   }
 
   return (
-    <article onClick={onSelectMovie} className="movie-description">
+    <article
+      onClick={onSelectMovie}
+      className="movie-description"
+      data-testid={`${genreId}-${movieId}`}
+    >
       <div className="movie-description-container">
         <div className="title-container">
           <div />

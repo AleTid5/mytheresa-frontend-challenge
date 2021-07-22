@@ -1,4 +1,5 @@
-module.exports = {
+const baseConfig = {
+  testEnvironment: "jsdom",
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
     "^@assets(.*)$": "<rootDir>/src/assets$1",
@@ -14,4 +15,16 @@ module.exports = {
       "<rootDir>/src/tests/utils/file-transformer.utils.js",
     "^.+\\.(js|jsx)$": ["babel-jest"],
   },
+};
+
+module.exports = {
+  ...baseConfig,
+  projects: [
+    {
+      displayName: "app",
+      testMatch: ["<rootDir>/src/tests/__tests__/**/*.test.js"],
+      setupFilesAfterEnv: ["<rootDir>/jest.env.js"],
+      ...baseConfig,
+    },
+  ],
 };

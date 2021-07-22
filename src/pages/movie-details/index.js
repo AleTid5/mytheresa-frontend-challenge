@@ -15,7 +15,7 @@ export default function MovieDetails() {
     <div className={`movie-details ${genreName}`}>
       <Container>
         <Card className={`banner ${genreName}`}>
-          {genreName?.replaceAll("-", " ")}
+          {genreName?.replace(/-/g, " ")}
         </Card>
         <Link to="/" className="button-go-back">
           Go back

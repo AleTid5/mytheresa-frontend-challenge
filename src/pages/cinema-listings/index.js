@@ -1,4 +1,4 @@
-import { GENRES } from "@config/tmdb-api-connector.config";
+import GENRES from "@constants/genres.constant";
 import SECTIONS from "@constants/section.constant";
 import MoviesCarouselSection from "./components/movies-carousel-section";
 
