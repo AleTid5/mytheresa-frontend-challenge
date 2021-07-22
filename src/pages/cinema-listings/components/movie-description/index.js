@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
-import StarIcon from "assets/icons/StarIcon";
-import Image from "components/image";
+import StarIcon from "~assets/icons/StarIcon";
+import Image from "~components/image";
 
 export default function MovieDescription({
   movieId,

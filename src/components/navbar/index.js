@@ -1,7 +1,7 @@
-import HeartIcon from "assets/icons/HeartIcon";
-import Logo from "assets/images/logo.png";
+import HeartIcon from "~assets/icons/HeartIcon";
+import Logo from "~assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { useFavoriteMoviesContext } from "contexts/favorite-movies.context";
+import { useFavoriteMoviesContext } from "~contexts/favorite-movies.context";
 
 export default function Navbar() {
   const { favoriteMovies } = useFavoriteMoviesContext();

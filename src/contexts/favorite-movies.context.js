@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import useLocalStorage from "hooks/use-local-storage";
+import useLocalStorage from "~hooks/use-local-storage";
 
 const FavoriteMoviesContext = createContext({
   favoriteMovies: [],

@@ -1,9 +1,8 @@
-import StarIcon from "assets/icons/StarIcon";
-import HalfStarIcon from "assets/icons/HalfStarIcon";
-import FullHeartIcon from "assets/icons/FullHeartIcon";
-import Card from "components/card";
-import Image from "components/image";
-import { useFavoriteMoviesContext } from "contexts/favorite-movies.context";
+import StarIcon from "~assets/icons/StarIcon";
+import HalfStarIcon from "~assets/icons/HalfStarIcon";
+import Card from "~components/card";
+import Image from "~components/image";
+import { useFavoriteMoviesContext } from "~contexts/favorite-movies.context";
 
 export default function FavoriteMovieCard({ movie }) {
   const { removeFromFavorites } = useFavoriteMoviesContext();

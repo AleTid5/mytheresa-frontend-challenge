@@ -1,4 +1,4 @@
-import Skeleton from "components/skeleton";
+import Skeleton from "~components/skeleton";
 import CoverCarousel from "./cover-carousel";
 
 export default function CoverCarouselSkeleton() {
