@@ -16,4 +16,11 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  .no-movies-selected {
+    color: $title-color;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+  }
 }

@@ -8,11 +8,17 @@ export default function FavoriteMovies() {
   return (
     <div className="favorite-movies">
       <Container>
-        <div className="favorite-movies-grid">
-          {favoriteMovies.map((favoriteMovie, key) => (
-            <FavoriteMovieCard key={key} movie={favoriteMovie} />
-          ))}
-        </div>
+        {favoriteMovies.length ? (
+          <div className="favorite-movies-grid">
+            {favoriteMovies.map((favoriteMovie, key) => (
+              <FavoriteMovieCard key={key} movie={favoriteMovie} />
+            ))}
+          </div>
+        ) : (
+          <h1 className="no-movies-selected">
+            There are no favorite movies selected
+          </h1>
+        )}
       </Container>
     </div>
   );
