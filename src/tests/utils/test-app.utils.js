@@ -13,7 +13,7 @@ const AllTheProviders = (
   </Router>
 );
 
-const customRender = (ui, options) => render(AllTheProviders, options);
+const customRender = (options) => render(AllTheProviders, options);
 
 // re-export everything
 export * from "@testing-library/react";
